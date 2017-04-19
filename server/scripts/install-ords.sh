@@ -19,6 +19,7 @@ java -jar ords.war configdir $ORACLE_BASE
 java -jar ords.war install simple
 sed -i -e 's|<entry key="jdbc.MaxLimit">10</entry>|<entry key="jdbc.MaxLimit">20</entry>|g' defaults.xml
 sed -i -e 's|<entry key="jdbc.InitialLimit">3</entry>|<entry key="jdbc.InitialLimit">6</entry>|g' defaults.xml
+sed -i -e 's|<entry key="misc.defaultPage">apex</entry>|<entry key="misc.defaultPage">f?p=mandela</entry>|g' defaults.xml
 
 # cp -rf $ORDS_HOME/ords.war /usr/share/tomcat/webapps/
 # cp -rf $ORACLE_HOME/apex/images /usr/share/tomcat/webapps/i

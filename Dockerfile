@@ -13,7 +13,8 @@ ENV ORACLE_BASE=/u01/app/oracle \
     ORACLE_SID=XE
 
 # Use second ENV so that variable get substituted
-ENV PATH=$ORACLE_HOME/bin:$PATH
+ENV PATH=$ORACLE_HOME/bin:$PATH \
+    SHM_SIZE="1G" 
 
 # Copy binaries
 # -------------
