@@ -1,0 +1,2 @@
+#!/bin/sh
+docker build --force-rm=true --no-cache=false --shm-size=1G -t trevis/mandela .

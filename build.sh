@@ -15,7 +15,7 @@ DOCKEROPS="--force-rm=true --no-cache=false --shm-size=1G";
 
 # BUILD THE IMAGE (replace all environment variables)
 BUILD_START=$(date '+%s')
-docker build $DOCKEROPS -t $IMAGE_NAME -f mandela.dockerfile . || {
+docker build $DOCKEROPS -t $IMAGE_NAME -f Dockerfile . || {
   echo "There was an error building the image."
   exit 1
 }
