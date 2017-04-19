@@ -15,7 +15,12 @@ rm $INSTALL_FILE*
 rpm -i Disk1/*.rpm
 rm -rf Disk1/
 sed -i -e "s|###ORACLE_PWD###|$ORACLE_PWD|g" $CONFIG_RSP
+mv /usr/bin/free /usr/bin/free.bak
+printf "#!/bin/sh\necho Swap - - 2048" > /usr/bin/free
+chmod +x /usr/bin/free
 /etc/init.d/oracle-xe configure responseFile=$CONFIG_RSP
+rm /usr/bin/free
+mv /usr/bin/free.bak /usr/bin/free
 rm $CONFIG_RSP
 echo "LISTENER = \
        (DESCRIPTION_LIST = \

@@ -1,0 +1,4 @@
+build:
+  context: .
+  dockerfile: Dockerfile-alternate
+  shm_size: 1G
